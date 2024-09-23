@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  :root {
+    --body: #64748B;
+    --bodydark: #AEB7C0;
+  }
+
+  h1 {
+    @apply text-3xl font-bold text-gray-900 dark:text-white;
+  }
+
+  h3 {
+    @apply font-semibold;
+  }
+
+  header, footer {
+    @apply px-4 py-2 md:px-6 2xl:px-10;
+  }
+
+  body,
+  main,
+  header {
+    @apply bg-whiten text-gray-900 dark:bg-boxdark-2 dark:text-white;
+  }
+
+  aside {
+    @apply bg-black dark:bg-boxdark;
+  }
+
+  .content {
+    @apply p-4 md:p-6 2xl:p-10 flex-grow;
+  }
+
+  footer {
+    @apply pb-4 px-4 md:px-6 2xl:px-10;
+  }
+
+  .nav-item {
+    @apply py-2;
+  }
+
+  .nav-link {
+    @apply block rounded p-2 hover:bg-gray-700;
+  }
+
+  label {
+    @apply mb-2 block text-sm;
+  }
+
+  /* CARD */
+
+  .card {
+    @apply rounded-sm border border-stroke bg-white px-6 shadow-sm dark:border-strokedark dark:bg-gray-800;
+  }
+
+  .card-header {
+    @apply border-b border-stroke py-4 dark:border-strokedark;
+  }
+
+  .card-body {
+    @apply px-3 py-6;
+  }
+
+  /* FORM */
+
+  .form-input {
+    @apply w-full rounded-lg border border-stroke bg-transparent px-4.5 py-3 outline-none focus:border-primary focus-visible:shadow-none focus-visible:outline-none dark:border-strokedark  dark:focus:border-primary;
+  }
+
+  .form-textarea {
+    @apply w-full rounded-lg border border-stroke bg-slate-50 px-4.5 py-3 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-strokedark dark:bg-form-input  dark:focus:border-primary;
+  }
+
+  .form-input-icon-left {
+    @apply w-full rounded-lg border border-stroke bg-transparent py-3 pl-11.5 pr-4.5  outline-none focus:border-primary focus-visible:shadow-none focus-visible:outline-none dark:border-strokedark  dark:focus:border-primary;
+  }
+
+  .form-select {
+    @apply w-full rounded-lg border border-stroke bg-transparent px-4.5 py-3 outline-none focus:border-primary focus-visible:shadow-none focus-visible:outline-none dark:border-strokedark dark:focus:border-primary;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M6 8l-6-6h12z' fill='%23000'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 12px;
+  }
+
+  .form-select-option {
+    @apply bg-white dark:bg-form-input text-gray-900 dark:text-white px-4.5 py-3;
+  }
+
+
+  .form-error {
+    @apply text-sm text-red-500 dark:text-errordark;
+  }
+
+  .form-input-label {
+    @apply mb-4;
+  }
+
+  .form-icon-left {
+    @apply absolute left-4.5 top-4;
+  }
+
+  .form-button-primary {
+    @apply flex justify-center rounded bg-primary px-6 py-2 font-medium text-white hover:bg-opacity-90;
+  }
+
+  .form-button-secondary {
+    @apply flex justify-center rounded border border-stroke px-6 py-2 font-medium hover:shadow-1 dark:border-strokedark;
+  }
+
+  .form-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--body); 
+  }
+
+  .dark .form-icon {
+    color: var(--bodydark); 
+  }
+
+  .custom-border {
+    @apply border border-stroke dark:border-form-strokedark ;
+  }
+
+  /* TABLE */
+
+  .table-container {
+    @apply rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-gray-800 sm:px-7.5 xl:pb-1 ;
+  }
+
+  .table-header {
+    @apply  text-left dark:bg-boxdark bg-whiten;
+  }
+
+  .last-serviceitem td {
+    border-bottom: none;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+  }
+}
