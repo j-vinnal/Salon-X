@@ -1,6 +1,6 @@
 import {IClient} from '@/interfaces/domain/IClient';
-import EditDeleteBtn from '../ui/form/editDeleteBtn';
 import AddEntityButton from '../ui/AddEntityButton';
+import EditDeleteBtn from '../ui/form/editDeleteBtn';
 
 interface IViewClientsProps {
   clients: IClient[];
@@ -32,7 +32,7 @@ const ViewClients: React.FC<IViewClientsProps> = ({clients, onOpenClientModal, o
                 <tbody>
                   {clients.map((client, key) => (
                     <tr key={key} className={key === clients.length - 1 ? 'last-serviceitem' : ''}>
-                      <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>
+                      <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark xl:pl-11'>
                         {client.firstName} {client.lastName}
                       </td>
                       <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>{client.email}</td>

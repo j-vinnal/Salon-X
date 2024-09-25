@@ -15,11 +15,8 @@ export default function AdminLayout({children}: {children: React.ReactNode}) {
 
   useEffect(() => {
     if (jwtResponse === undefined) {
-      console.log('No JWT response, redirecting to signin');
       router.push('/signin');
-    } else {
-      console.log('JWT response:', jwtResponse);
-    }
+    } 
   }, [jwtResponse, router]);
 
   if (jwtResponse === undefined) {

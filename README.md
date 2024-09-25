@@ -1,36 +1,89 @@
+# SalonX - Beauty Services Management and Booking Platform
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 
-First, run the development server:
+To get started with the project, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone <repository-url>
+    cd repository
+    npm install
+    npm run dev
+    ```
+
+
+## Project Overview
+
+SalonX is a beauty services management and booking platform that uses Next.js for the frontend and .NET for the backend (link placeholder). The public view is hosted on Azure at [https://salonx-nextjs.azurewebsites.net/signin](https://salonx-nextjs.azurewebsites.net/signin).
+
+### Technologies
+
+- **Next.js** - A React framework for server-side rendering and static site generation.
+- **Tailwind CSS** - A utility-first CSS framework for rapid UI development.
+- **React Hook Forms** - A simple and flexible form management library.
+- **Zod** - A TypeScript-first schema declaration and validation library.
+- **Axios** - A promise-based HTTP client for making API requests.
+- **Docker** - For containerization and deployment.
+
+### Directory Structure
+
+- **`/services`** - API services are separated into their own directory.
+  - Examples:
+    - `IdentityService` - Services for user authentication and authorization.
+    - `BookingService` - Services for managing bookings.
+    - `ClientService` - Services for managing clients.
+    - `CompanyService` - Services for managing companies.
+    - `ImageUploadService` - Services for uploading images.
+
+
+## Docker (Optional)
+
+### Build and run locally
+
+Create the image:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+docker build -t salonx-nextjs:latest .
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the container
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+docker run -d -p 8080:80 salonx-nextjs:latest
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Build to Docker Hub
 
-## Learn More
+Create the image:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker buildx build --progress=plain -t salonx-nextjs:latest .
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a tag:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+docker tag salonx-nextjs <your-docker-hub-profile>/salonx-nextjs:latest
+```
 
-## Deploy on Vercel
+Push the image:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+docker push <your-docker-hub-profile>/salonx-nextjs:latest
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Personal Note
+
+This project is created for personal practice and learning of Next.js. If you have any questions or suggestions, feel free to reach out!
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.

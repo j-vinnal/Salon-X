@@ -41,7 +41,6 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
       if (e.response?.status === 401 && retry) {
         const retryResult = await this.handle401Error(e, jwtData);
         if (retryResult === null) {
@@ -56,20 +55,17 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
 
   async postRequest(entity: TEntity, jwtData: IJWTResponse, retry: boolean = true): Promise<IResultObject<TEntity>> {
     try {
-      console.log("entity base:", entity);
       const response = await this.axios.post<TEntity>('', entity, {
         headers: {
           Authorization: 'Bearer ' + jwtData.jwt,
         },
       });
 
-      console.log('response from service ' + response);
       if (response.status < 300) {
         return {data: response.data};
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
       if (e.response?.status === 401 && retry) {
         const retryResult = await this.handle401Error(e, jwtData);
         if (retryResult === null) {
@@ -82,17 +78,15 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
     }
   }
 
-  async postRequestPublic(entity: TEntity): Promise<IResultObject<TEntity>> { 
+  async postRequestPublic(entity: TEntity): Promise<IResultObject<TEntity>> {
     try {
-      const response = await this.axios.post<TEntity>('', entity); 
-      console.log('response from service ' + response);
+      const response = await this.axios.post<TEntity>('', entity);
       if (response.status < 300) {
         return {data: response.data};
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
-      return this.handleError(e); 
+      return this.handleError(e);
     }
   }
 
@@ -108,7 +102,6 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
       if (e.response?.status === 401 && retry) {
         const retryResult = await this.handle401Error(e, jwtData);
         if (retryResult === null) {
@@ -128,13 +121,11 @@ export abstract class BaseEntityService<TEntity extends IBaseEntity> extends Bas
           Authorization: 'Bearer ' + jwtData.jwt,
         },
       });
-      console.log('response from service ' + response);
       if (response.status < 300) {
         return {data: response.data};
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
       if (e.response?.status === 401 && retry) {
         const retryResult = await this.handle401Error(e, jwtData);
         if (retryResult === null) {

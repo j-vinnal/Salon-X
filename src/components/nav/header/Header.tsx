@@ -16,9 +16,12 @@ const Header = (props: {sidebarOpen: boolean; setSidebarOpen: (arg0: boolean) =>
   return (
     <header className='h-20 flex-none'>
       <div className='flex h-full grow items-center justify-between'>
+
+      {jwtResponse?.jwt && 
         <div className='pr-2 lg:hidden'>
           <HamburgerToggle sidebarOpen={props.sidebarOpen} setSidebarOpen={props.setSidebarOpen} />
         </div>
+      }
 
         <div className='flex w-full'>
           <Breadcrumb />

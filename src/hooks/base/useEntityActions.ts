@@ -64,7 +64,7 @@ const useEntityActions = <T extends IBaseEntity>(ServiceClass: any, isPublic: bo
   };
 
   const fetchEntity = useCallback(async () => {
-    console.log('fetchEntity');
+ 
     setLoading(true);
     const service = new ServiceClass(setJwtResponse);
     try {

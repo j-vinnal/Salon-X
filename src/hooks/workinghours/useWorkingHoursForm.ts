@@ -132,8 +132,7 @@ const useWorkingHoursForm = () => {
   };
 
   const handleEditWorkingHours = async (workingHourData: IWorkingHour[]) => {
-    console.log('workingHourData');
-    console.log(workingHourData);
+   
     try {
       const promises = workingHourData.map(async dayData => {
         const existing = workingHours.find(wh => wh.dayOfWeek === dayData.dayOfWeek);

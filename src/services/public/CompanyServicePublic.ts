@@ -19,9 +19,7 @@ export class CompanyServicePublic extends BaseEntityService<ICompanyWithServices
       }
       return {errors: [`${response.status} ${response.statusText}`]};
     } catch (e: any) {
-      console.log('error from service ' + e);
       return this.handleError(e);
     }
   }
-
 }

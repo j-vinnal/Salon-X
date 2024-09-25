@@ -1,5 +1,5 @@
-import { IBooking } from '@/interfaces/domain/IBooking';
-import { EBookingStatus } from '@/interfaces/enums/EBookingStatus';
+import {IBooking} from '@/interfaces/domain/IBooking';
+import {EBookingStatus} from '@/interfaces/enums/EBookingStatus';
 import AddEntityButton from '../ui/AddEntityButton';
 import EditDeleteBtn from '../ui/form/editDeleteBtn';
 
@@ -35,7 +35,7 @@ const ViewBookings: React.FC<IViewBookingsProps> = ({bookings, onOpenBookingModa
                 <tbody>
                   {bookings.map((booking, key) => (
                     <tr key={key} className={key === bookings.length - 1 ? 'last-serviceitem' : ''}>
-                      <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>{booking.clientName}</td>
+                      <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark xl:pl-11'>{booking.clientName}</td>
                       <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>{booking.serviceName}</td>
                       <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>{new Date(booking.bookingDate).toLocaleDateString()}</td>
                       <td className='border-b border-[#eee] px-4 py-5 dark:border-strokedark'>

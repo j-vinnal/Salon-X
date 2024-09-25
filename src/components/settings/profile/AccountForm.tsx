@@ -43,7 +43,6 @@ const AccountForm = () => {
         <h3>Personal Information</h3>
       </div>
       {errors.root && <div className='form-error'>{errors.root.message}</div>}
-      {user?.profilePicturePath}
 
       <div className='card-body'>
         <form onSubmit={handleSubmit(handleEditAccount)}>

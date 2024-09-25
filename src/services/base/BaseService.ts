@@ -3,7 +3,7 @@ import Axios, {AxiosInstance} from 'axios';
 
 export abstract class BaseService {
   private static hostBaseURL =
-    process.env.REACT_APP_BACKEND_URL || 'http://localhost:5133/api/';
+    process.env.NEXT_PUBLIC_BACKEND_URL + '/api/' || 'http://localhost:5133/api/';
   protected axios: AxiosInstance;
 
   protected constructor(baseURL: string) {
@@ -18,7 +18,6 @@ export abstract class BaseService {
 
     // Optionally, you can write interceptors here
     this.axios.interceptors.request.use(request => {
-      //  console.log('Starting Request', JSON.stringify(request, null, 2))
       return request;
     });
   }
