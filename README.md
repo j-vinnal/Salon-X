@@ -18,7 +18,7 @@ To get started with the project, follow these steps:
 
 ## Project Overview
 
-SalonX is a beauty services management and booking platform that uses Next.js for the frontend and .NET for the backend. The backend project can be found at [https://github.com/j-vinnal/Salon-X-API/](https://github.com/j-vinnal/Salon-X-API/). The public view is hosted on Azure at [https://salonx-nextjs.azurewebsites.net/signin](https://salonx-nextjs.azurewebsites.net/signin).
+SalonX is a beauty services management and booking platform that uses Next.js for the frontend and .NET for the backend. The backend project can be found at [https://github.com/j-vinnal/Salon-X-API/](https://github.com/j-vinnal/Salon-X-API/). The live app is hosted on Azure at [https://salonx-nextjs.azurewebsites.net/signin](https://salonx-nextjs.azurewebsites.net/signin).
 
 ### Technologies
 
